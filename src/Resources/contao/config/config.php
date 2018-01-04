@@ -25,7 +25,7 @@ array_insert($GLOBALS['BE_MOD']['architekt'], 100, array
 //	,
 //	'hausplaner'=> array
 //	(
-//		'tables' => array('tl_veba_hausplaner')
+//		'tables' => array('tl_hausplaner')
 //	)
 )
 );

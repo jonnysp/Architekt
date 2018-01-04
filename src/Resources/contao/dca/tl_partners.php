@@ -7,7 +7,7 @@ $GLOBALS['TL_DCA']['tl_partners'] = array
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ctable'                      => array('tl_veba_partner'),
+		'ctable'                      => array('tl_partner'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -49,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_partners'] = array
 			'edit' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_partners']['edit'],
-				'href'                => 'table=tl_veba_partner',
+				'href'                => 'table=tl_partner',
 				'icon'                => 'edit.gif'
 			),
 			'editheader' => array
