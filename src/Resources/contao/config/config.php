@@ -31,6 +31,15 @@ array_insert($GLOBALS['BE_MOD']['architekt'], 100, array
 );
 
 
+/**
+ * Style sheet
+ */
+if (TL_MODE == 'BE')
+{
+	$GLOBALS['TL_CSS'][] = 'bundles/jonnysparchitekt/architekt.css|static';
+}
+
+
 ///**
 // * Front end modules
 // */
