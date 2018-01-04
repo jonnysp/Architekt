@@ -1,0 +1,96 @@
+<div class="item <?= $this->class; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+
+
+	<div class="row">
+		<?php  foreach ($this->referenzen as $key => $referenz): ?>
+			<div class="col-md-6 referenz">
+				<div class="row">
+
+					<div class="col-md-6 col-xs-5">
+						<img style="cursor: pointer;" class="thumbnail img-responsive referenz-image" data-toggle="modal" data-target="#Modalreferenz<?= $referenz['id'] ?>" src="<?php echo $this->getImage(\FilesModel::findByUuid($referenz['image']->uuid)->path,320,240,'proportional');  ?>">
+
+					</div>
+
+					<div class="col-md-6 col-xs-7">
+						<p class="referenz-text"><strong><?= $referenz['title']; ?></strong><br>
+							<?php if ($referenz['description']!=''): ?><?= $referenz['description']; ?><br><?php endif; ?>
+							<?php if ($referenz['year']!=''): ?><?= $referenz['year']; ?> erbaut<br><?php endif; ?>
+							<?php if ($referenz['type']!=''): ?><?= $referenz['type']; ?><?php endif; ?>
+						</p>
+					</div>
+			
+				<?php $this->counter = 0; ?>
+				<div class="modal fade" id="Modalreferenz<?= $referenz['id'] ?>" role="dialog">
+				  <div class="modal-dialog modal-lg" role="document">
+					  <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title"><?= $referenz['title']; ?></h4>   
+					      </div>
+					      	<div class="modal-body">
+		
+
+<?php if (count($referenz['images']) > 0) :?>
+
+
+					<div id="carousel-referenz-<?= $referenz['id'] ?>" class="carousel slide" data-ride="carousel">
+													  
+
+						<!-- Carousel indicators -->
+						<?php if (count($referenz['images']) > 1) :?>
+							<ol class="carousel-indicators hidden-xs">
+							<?php for ($i = 0; $i < count($referenz['images']); $i++): ?>
+								    <li data-target="#carousel-referenz-<?= $referenz['id'] ?>" data-slide-to="<?= $i;?>" class="<?php if ($i == 0): echo 'active'; endif; ?>"></li>
+							<?php endfor; ?>
+							</ol>
+						<?php endif; ?> 
+
+								<!-- Wrapper for slides -->
+						<div class="carousel-inner" itemscope itemtype="http://schema.org/ImageGallery">  
+							<?php foreach ($referenz['images'] as $image): ?>
+							<?php $this->counter += 1; ?>   
+								<div class="item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
+									<figure itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+										<img class="img-responsive center-block" itemprop="thumbnailUrl" src="<?= $image->path; ?>">  
+									</figure>
+								</div>
+							<?php endforeach; ?>
+						</div>
+
+						<?php if (count($referenz['images']) > 1) :?>
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-referenz-<?= $referenz['id'] ?>" role="button" data-slide="prev">
+							  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							</a>
+							<a class="right carousel-control" href="#carousel-referenz-<?= $referenz['id'] ?>" role="button" data-slide="next">
+							  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							</a>
+						<?php endif; ?> 
+
+					</div>
+
+
+
+<?php else:  ?>
+
+					<figure itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+							<img class="img-responsive center-block" itemprop="thumbnailUrl" src="<?= $referenz['image']->path; ?>">  
+					</figure>
+
+<?php endif;  ?>
+
+
+
+					      	</div>
+					    </div>
+					</div>
+				</div>
+
+
+				</div>
+			</div>
+		<?php endforeach; ?>
+
+	</div>
+
+</div>
