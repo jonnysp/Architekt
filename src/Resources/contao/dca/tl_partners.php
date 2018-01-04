@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Table tl_cds
- */
 $GLOBALS['TL_DCA']['tl_partners'] = array
 (
 

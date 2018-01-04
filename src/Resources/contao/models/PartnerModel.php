@@ -1,7 +1,7 @@
 <?php
 
 
-class partner extends \Model
+class PartnerModel extends \Model
 {
 
     protected static $strTable = 'tl_partner';

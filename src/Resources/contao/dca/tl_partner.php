@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Table tl_recipes
- */
 $GLOBALS['TL_DCA']['tl_partner'] = array
 (
 
