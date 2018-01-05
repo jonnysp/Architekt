@@ -1,13 +1,16 @@
 <?php
 
-$GLOBALS['TL_DCA']['tl_partners'] = array
+/**
+ * Table tl_cds
+ */
+$GLOBALS['TL_DCA']['tl_referenzenarchiv'] = array
 (
 
 	// Config
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ctable'                      => array('tl_partner'),
+		'ctable'                      => array('tl_referenzen'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -48,32 +51,32 @@ $GLOBALS['TL_DCA']['tl_partners'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_partners']['edit'],
-				'href'                => 'table=tl_partner',
+				'label'               => &$GLOBALS['TL_LANG']['tl_referenzenarchiv']['edit'],
+				'href'                => 'table=tl_referenzen',
 				'icon'                => 'edit.svg'
 			),
 			'editheader' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_partners']['editheader'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_referenzenarchiv']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.svg'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_partners']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_referenzenarchiv']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.svg'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_partners']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_referenzenarchiv']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.svg',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_partners']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_referenzenarchiv']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.svg'
 			)
@@ -99,7 +102,7 @@ $GLOBALS['TL_DCA']['tl_partners'] = array
 		),
 		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_partners']['title'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_referenzenarchiv']['title'],
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),

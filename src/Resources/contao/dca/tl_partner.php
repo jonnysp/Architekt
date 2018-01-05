@@ -50,38 +50,38 @@ $GLOBALS['TL_DCA']['tl_partner'] = array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_partner']['edit'],
 				'href'                => 'act=edit',
-				'icon'                => 'edit.gif'
+				'icon'                => 'edit.svg'
 			),
 			'copy' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_partner']['copy'],
 				'href'                => 'act=copy',
-				'icon'                => 'copy.gif'
+				'icon'                => 'copy.svg'
 			),
 			'cut' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_partner']['cut'],
 				'href'                => 'act=paste&amp;mode=cut',
-				'icon'                => 'cut.gif'
+				'icon'                => 'cut.svg'
 			),
 
 			'delete' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_partner']['delete'],
 				'href'                => 'act=delete',
-				'icon'                => 'delete.gif',
+				'icon'                => 'delete.svg',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'show' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_partner']['show'],
 				'href'                => 'act=show',
-				'icon'                => 'show.gif'
+				'icon'                => 'show.svg'
 			),
 			'toggle' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_partner']['toggle'],
-				'icon'                => 'visible.gif',
+				'icon'                => 'visible.svg',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
 				'button_callback'     => array('tl_partner', 'toggleIcon')
 			)
@@ -91,7 +91,7 @@ $GLOBALS['TL_DCA']['tl_partner'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{title_legend},published,title,description;{image_legend:hide},logo;'
+		'default'                     => '{title_legend},published,title,description;{image_legend:hide},logo'
 	),
 
 	// Fields
@@ -118,7 +118,7 @@ $GLOBALS['TL_DCA']['tl_partner'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_partner']['toggle'],
 			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true, 'tl_class'=>'w50'),
+			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true, 'tl_class'=>'w100'),
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
@@ -129,7 +129,7 @@ $GLOBALS['TL_DCA']['tl_partner'] = array
 			'label'    				=> &$GLOBALS['TL_LANG']['tl_partner']['title'],
 			'search'              	=> true,
 			'inputType'          	=> 'text',
-			'eval'                  => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50','allowHtml'=>true,'preserveTags'=>true),
+			'eval'                  => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w100','allowHtml'=>true,'preserveTags'=>true),
 			'sql'            		=> "varchar(128) NOT NULL default ''"
 		),
 		'description' => array

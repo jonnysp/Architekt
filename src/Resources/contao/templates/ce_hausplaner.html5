@@ -1,12 +1,10 @@
 
-
-
 <div class="row">
 	<div class="col-md-5">
 		<div class="item ce_image hausplaner-bild">
-			<figure  itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+			<figure itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 				<a itemprop="contentURL" href="<?= $this->hausplan['image']['path']; ?>" title="<?= $this->hausplan['image']['meta']['title']; ?>" data-title="<?= $this->hausplan['image']['meta']['title']; ?>" data-lightbox="hausplan_<?= $this->id ?>"  data-gallery="<?= $this->id ?>" data-footer="<?= $this->hausplan['image']['meta']['caption']; ?>">
-					<img class="img-responsive center-block" itemprop="thumbnailUrl" src="<?php echo $this->getImage(\FilesModel::findByUuid($this->hausplan['image']['uuid'])->path,800,600,'proportional');  ?>">
+					<img class="img-fluid center-block" itemprop="thumbnailUrl" src="<?php echo $this->getImage(\FilesModel::findByUuid($this->hausplan['image']['uuid'])->path,800,600,'proportional');  ?>">
 				</a>
 			</figure>		
 		</div>
@@ -28,14 +26,15 @@
 		</div>
 
 		<br>
+		
 		<?php if (count($this->hausplan['images']) > 0) :?>
 			<div class="item ce_gallery hausplaner-galerie">
 				<div class="row" itemscope itemtype="http://schema.org/ImageGallery">
 
 					<?php foreach ($this->hausplan['images'] as $image): ?>
-						<figure class="col-xs-6 col-sm-6 col-md-3 col-lg-3" itemtype="http://schema.org/ImageObject" itemscope itemprop="associatedMedia">
+						<figure class="col-6 col-sm-6 col-md-3 col-lg-3" itemtype="http://schema.org/ImageObject" itemscope itemprop="associatedMedia">
 								<a itemprop="contentURL" class="thumbnail" href="<?= $image['path']; ?>" data-lightbox="hausplan_<?= $this->id ?>"  title="<?= $image['meta']['title']; ?>" data-title="<?=  $image['meta']['title']; ?>" data-gallery="<?= $this->id ?>" data-footer="<?=  $image['meta']['caption']; ?>">
-								    <img itemprop="thumbnailUrl" src="<?php echo $this->getImage(\FilesModel::findByUuid($image['uuid'])->path,400,300,'proportional');  ?>" alt="<?= $this->hausplan['title']; ?>">
+								    <img class="img-fluid"  itemprop="thumbnailUrl" src="<?php echo $this->getImage(\FilesModel::findByUuid($image['uuid'])->path,400,300,'proportional');  ?>" alt="<?= $this->hausplan['title']; ?>">
 								</a>
 						</figure>   				
 					<?php endforeach; ?>
@@ -45,4 +44,4 @@
 
 	</div>
 </div>
-<div class="hausplaner-trennung"></div>
+<hr class="hausplaner-trennung">
