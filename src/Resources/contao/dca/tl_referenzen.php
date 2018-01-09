@@ -185,6 +185,7 @@ $GLOBALS['TL_DCA']['tl_referenzen'] = array
 );
 
 
+use Contao\Image\ResizeConfiguration;
 
 class tl_referenzen extends Backend{
 	
@@ -197,11 +198,6 @@ class tl_referenzen extends Backend{
 				<tr><td><span class="tl_label">'.$GLOBALS['TL_LANG']['tl_referenzen']['description'][0].':</span></td><td>'.$arrRow['description']. '</td></tr>
 <tr><td><span class="tl_label">'.$GLOBALS['TL_LANG']['tl_referenzen']['type'][0].':</span></td><td>'.$arrRow['type']. '</td></tr>
 <tr><td><span class="tl_label">'.$GLOBALS['TL_LANG']['tl_referenzen']['year'][0].':</span></td><td>'.$arrRow['year']. '</td></tr>
-
-
-
-
-
 				  </table>';
 
 		if ($arrRow['image'] != '')
@@ -209,7 +205,11 @@ class tl_referenzen extends Backend{
 			$objFile = FilesModel::findByUuid($arrRow['image']);
 			if ($objFile !== null)
 			{
-				$label = Image::getHtml(Image::get($objFile->path, 80, 80, 'center_top'), '', 'style="float:left;"') . ' ' . $label;
+				$container = System::getContainer();
+				$rootDir = $container->getParameter('kernel.project_dir');
+
+				$label = Image::getHtml($container->get('contao.image.image_factory')->create($rootDir.'/'.$objFile->path,(new ResizeConfiguration())->setWidth(80)->setHeight(80)->setMode(ResizeConfiguration::MODE_BOX))->getUrl($rootDir), '', 'style="float:left;"') . ' ' . $label;
+
 			}
 		}
 		return $label;
@@ -241,7 +241,7 @@ class tl_referenzen extends Backend{
 			$icon = 'invisible.gif';
 		}
 
-		return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.Image::getHtml($icon, $label).'</a> ';
+		return '<a href="'.$this->addToUrl($href).'" title="'.StringUtil::specialchars($title).'"'.$attributes.'>'.Image::getHtml($icon, $label).'</a> ';
 	}
 
 
@@ -269,8 +269,7 @@ class tl_referenzen extends Backend{
 		}
 
 		// Update the database
-		$this->Database->prepare("UPDATE tl_referenzen SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
-					   ->execute($intId);
+		$this->Database->prepare("UPDATE tl_referenzen SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")->execute($intId);
 
 	}
 

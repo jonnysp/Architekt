@@ -151,6 +151,7 @@ $GLOBALS['TL_DCA']['tl_partner'] = array
 );
 
 
+use Contao\Image\ResizeConfiguration;
 
 class tl_partner extends Backend{
 	
@@ -167,7 +168,11 @@ class tl_partner extends Backend{
 			$objFile = FilesModel::findByUuid($arrRow['logo']);
 			if ($objFile !== null)
 			{
-				$label = Image::getHtml(Image::get($objFile->path, 80, 80, 'center_top'), '', 'style="float:left;"') . ' ' . $label;
+				$container = System::getContainer();
+				$rootDir = $container->getParameter('kernel.project_dir');
+
+				$label = Image::getHtml($container->get('contao.image.image_factory')->create($rootDir.'/'.$objFile->path,(new ResizeConfiguration())->setWidth(80)->setHeight(80)->setMode(ResizeConfiguration::MODE_BOX))->getUrl($rootDir), '', 'style="float:left;"') . ' ' . $label;
+
 			}
 		}
 		return $label;
@@ -189,7 +194,7 @@ class tl_partner extends Backend{
 			$icon = 'invisible.gif';
 		}
 
-		return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.Image::getHtml($icon, $label).'</a> ';
+		return '<a href="'.$this->addToUrl($href).'" title="'.StringUtil::specialchars($title).'"'.$attributes.'>'.Image::getHtml($icon, $label).'</a> ';
 	}
 
 

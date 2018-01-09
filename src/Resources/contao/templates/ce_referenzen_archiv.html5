@@ -1,3 +1,4 @@
+
 <div class="item <?= $this->class; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<div class="row">
@@ -6,7 +7,7 @@
 				<div class="row">
 
 					<div class="col-md-6 col-5">
-						<img style="cursor: pointer;" class="thumbnail img-fluid referenz-image" data-toggle="modal" data-target="#Modalreferenz<?= $referenz['id'] ?>" src="<?php echo $this->getImage(\FilesModel::findByUuid($referenz['image']->uuid)->path,320,240,'proportional');  ?>">
+						<img style="cursor: pointer;" class="thumbnail img-fluid referenz-image" data-toggle="modal" data-target="#Modalreferenz<?= $referenz['id'] ?>" src="<?= $referenz['image']->path;  ?>">
 					</div>
 
 					<div class="col-md-6 col-7">
@@ -38,7 +39,7 @@
 													  
 						<!-- Carousel indicators -->
 						<?php if (count($referenz['images']) > 1) :?>
-							<ol class="carousel-indicators">
+							<ol class="carousel-indicators" style="overflow: hidden;">
 							<?php for ($i = 0; $i < count($referenz['images']); $i++): ?>
 								<li data-target="#carousel-referenz-<?= $referenz['id'] ?>" data-slide-to="<?= $i;?>" class="<?php if ($i == 0): echo 'active'; endif; ?>"></li>
 							<?php endfor; ?>

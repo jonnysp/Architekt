@@ -48,7 +48,7 @@ class HausplanerViewer extends ContentElement
 
 		//multiimages
 		$objPlanImages = Array();
-		$objunsortedImages = \FilesModel::findMultipleByUuids(deserialize($objPlan->images));
+		$objunsortedImages = \FilesModel::findMultipleByUuids(StringUtil::deserialize($objPlan->images));
 		$objImagesSort = unserialize($objPlan->imagessort);
 
 		//sort Images

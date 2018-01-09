@@ -42,7 +42,7 @@ class ReferenzenArchiv extends ContentElement
 					type => $value->type,
 					year => $value->year,
 					image => \FilesModel::findByPk($value->image),
-					images => \FilesModel::findMultipleByUuids(deserialize($value->images))
+					images => \FilesModel::findMultipleByUuids(StringUtil::deserialize($value->images))
 				);
 			}
 		}
