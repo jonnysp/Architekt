@@ -33,7 +33,7 @@ class ReferenzenArchiv extends ContentElement
 		);
 
 
-		if (count($referenzen_filter) > 0){
+		if ($referenzen_filter && count($referenzen_filter) > 0){
 			foreach ($referenzen_filter as $key => $value) {
 
 				$referenzen[$key] = array(
