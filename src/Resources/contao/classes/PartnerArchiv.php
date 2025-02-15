@@ -34,10 +34,10 @@ class PartnerArchiv extends ContentElement
 			foreach ($Partner_filter as $key => $value) {
 
 				$partner[$key] = array(
-					id => $value->id,
-					title => $value->title,
-					description => $value->description,
-					image => \FilesModel::findByPk($value->image),
+					"id" => $value->id,
+					"title" => $value->title,
+					"description" => $value->description,
+					"image" => \FilesModel::findByPk($value->image),
 	
 				);
 			}

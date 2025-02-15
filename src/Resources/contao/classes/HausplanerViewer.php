@@ -73,31 +73,31 @@ class HausplanerViewer extends ContentElement
 		 	foreach ($objPlanImages as $key => $value) {
 				$images[$key] = array
 				(
-					uuid => $value->uuid,
-					meta => $this->getMetaData($value->meta, $objPage->language),
-					path => $value->path,
-					name => $value->name,
-					extension => $value->extension
+					"uuid" => $value->uuid,
+					"meta" => $this->getMetaData($value->meta, $objPage->language),
+					"path" => $value->path,
+					"name" => $value->name,
+					"extension" => $value->extension
 				);
 		 	}
 		 }
 
 
 		$hausplan = array(
-					id => $objPlan->id,
-					title => $objPlan->title,
-					type => $objPlan->type,
-					construction => $objPlan->construction,
-					basearea => $objPlan->basearea,
-					livingarea	=> $objPlan->livingarea,		
-					image => array(
-								uuid => $objPlanImage->uuid,
-								meta => $this->getMetaData($objPlanImage->meta, $objPage->language),
-								path => $objPlanImage->path,
-								name => $objPlanImage->name,
-								extension => $objPlanImage->extension
+					"id" => $objPlan->id,
+					"title" => $objPlan->title,
+					"type" => $objPlan->type,
+					"construction" => $objPlan->construction,
+					"basearea" => $objPlan->basearea,
+					"livingarea"	=> $objPlan->livingarea,		
+					"image" => array(
+								"uuid" => $objPlanImage->uuid,
+								"meta" => $this->getMetaData($objPlanImage->meta, $objPage->language),
+								"path" => $objPlanImage->path,
+								"name" => $objPlanImage->name,
+								"extension" => $objPlanImage->extension
 							),
-					images => $images
+					"images" => $images
 				);
 
 		$this->Template->hausplan = $hausplan;

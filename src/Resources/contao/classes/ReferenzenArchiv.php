@@ -26,6 +26,7 @@ class ReferenzenArchiv extends ContentElement
 		$this->loadLanguageFile('tl_referenzen');
 		$referenzen = array();
 
+
 		$objArchiv = \ReferenzenarchivModel::findByPK($this->referenzarchiv);
 		$referenzen_filter = \ReferenzenModel::findAll(
 			array('column' => array('pid=?','published=?'),'value' => array($objArchiv->id,1) ,'order' => 'sorting')
@@ -36,16 +37,19 @@ class ReferenzenArchiv extends ContentElement
 			foreach ($referenzen_filter as $key => $value) {
 
 				$referenzen[$key] = array(
-					id => $value->id,
-					title => $value->title,
-					description => $value->description,
-					type => $value->type,
-					year => $value->year,
-					image => \FilesModel::findByPk($value->image),
-					images => \FilesModel::findMultipleByUuids(StringUtil::deserialize($value->images))
+					"id" => $value->id,
+					"title" => $value->title,
+					"description" => $value->description,
+					"type" => $value->type,
+					"year" => $value->year,
+					"image" => \FilesModel::findByPk($value->image),
+					"images" => \FilesModel::findMultipleByUuids(StringUtil::deserialize($value->images))
 				);
 			}
 		}
+
+		
+
 
 		$this->Template->referenzen = $referenzen;
 
