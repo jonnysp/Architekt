@@ -119,7 +119,9 @@ $GLOBALS['TL_DCA']['tl_partner'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_partner']['toggle'],
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true, 'tl_class'=>'w100'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => "char(1) NOT NULL default ''",
+			'save_callback'			  => array()
+
 		),
 
 

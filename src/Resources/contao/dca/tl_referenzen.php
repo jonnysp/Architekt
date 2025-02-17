@@ -178,7 +178,8 @@ $GLOBALS['TL_DCA']['tl_referenzen'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_referenzen']['toggle'],
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true, 'tl_class'=>'w100'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => "char(1) NOT NULL default ''",
+			'save_callback'			  => array()
 		),
 
 	)
