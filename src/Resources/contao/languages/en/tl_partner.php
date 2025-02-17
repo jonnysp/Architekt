@@ -22,7 +22,7 @@ $GLOBALS['TL_LANG']['tl_partner']['show']   = array('Partner Details', 'Details 
 $GLOBALS['TL_LANG']['tl_partner']['cut']   = array('Partner verschieben', 'Verschiebe Partner ID %s');
 $GLOBALS['TL_LANG']['tl_partner']['edit'] = array( 'Partner bearbeiten', 'Bearbeite Partner ID %s');
 $GLOBALS['TL_LANG']['tl_partner']['editheader'] = array( 'Partnergruppe bearbeiten', 'Bearbeite Partnergruppe');
-$GLOBALS['TL_LANG']['tl_partner']['pastenew'] = array( 'Einen neuen Partner anlegen');
+$GLOBALS['TL_LANG']['tl_partner']['pastenew'] = array( 'Partner einfügen','Einen neuen Partner einfügen');
 
 $GLOBALS['TL_LANG']['tl_partner']['toggle'] = array('AN/AUS','An / Aus');
 

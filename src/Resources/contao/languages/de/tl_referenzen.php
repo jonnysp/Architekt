@@ -13,6 +13,10 @@ $GLOBALS['TL_LANG']['tl_referenzen']['image'] = array('Bild','wählen sie das Bi
 $GLOBALS['TL_LANG']['tl_referenzen']['images'] = array('Mehr Bilder','wählen sie mehr Bilder der Referenz aus.');
 $GLOBALS['TL_LANG']['tl_referenzen']['imagessort'] = array('Bildsortierung','');
 
+
+
+
+
 /**
  * Legends
  */
@@ -28,7 +32,7 @@ $GLOBALS['TL_LANG']['tl_referenzen']['show']   = array('Referenz Details', 'Deta
 $GLOBALS['TL_LANG']['tl_referenzen']['cut']   = array('Referenz verschieben', 'Verschiebe Referenz ID %s');
 $GLOBALS['TL_LANG']['tl_referenzen']['edit'] = array( 'Referenz bearbeiten', 'Bearbeite Referenz ID %s');
 $GLOBALS['TL_LANG']['tl_referenzen']['editheader'] = array( 'Archiv bearbeiten', 'Bearbeite Archiv');
-$GLOBALS['TL_LANG']['tl_referenzen']['pastenew'] = array( 'Eine neue Referenz anlegen');
+$GLOBALS['TL_LANG']['tl_referenzen']['pastenew'] = array( 'Referenz einfügen','Eine neue Referenz einfügen');
 
 $GLOBALS['TL_LANG']['tl_referenzen']['toggle'] = array('AN/AUS','An / Aus');
 

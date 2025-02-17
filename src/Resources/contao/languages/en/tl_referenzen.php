@@ -28,7 +28,7 @@ $GLOBALS['TL_LANG']['tl_referenzen']['show']   = array('Referenz Details', 'Deta
 $GLOBALS['TL_LANG']['tl_referenzen']['cut']   = array('Referenz verschieben', 'Verschiebe Referenz ID %s');
 $GLOBALS['TL_LANG']['tl_referenzen']['edit'] = array( 'Referenz bearbeiten', 'Bearbeite Referenz ID %s');
 $GLOBALS['TL_LANG']['tl_referenzen']['editheader'] = array( 'Archiv bearbeiten', 'Bearbeite Archiv');
-$GLOBALS['TL_LANG']['tl_referenzen']['pastenew'] = array( 'Eine neue Referenz anlegen');
+$GLOBALS['TL_LANG']['tl_referenzen']['pastenew'] = array( 'Referenz einfügen','Eine neue Referenz einfügen');
 
 $GLOBALS['TL_LANG']['tl_referenzen']['toggle'] = array('AN/AUS','An / Aus');
 
